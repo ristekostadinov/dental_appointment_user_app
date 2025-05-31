@@ -1,0 +1,29 @@
+<div class="max-w-xl mx-auto mt-10 bg-gray-100 border-gray-300 p-6 rounded-lg shadow">
+  <form [formGroup]="homePageForm" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label for="location" class="block text-gray-700 mb-2">Location</label>
+      <select required formControlName="location" id="location" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <option value="">Select a location</option>
+        @for(location of locations; track location.id) {
+          <option value="{{location.id}}">{{location.name}}</option>
+        }
+      </select>
+      @if(location?.hasError('required')) {
+        <div class="text-red-700 text-sm mt-1">Location is required.</div>
+      }
+    </div>
+    <div class="mb-4">
+      <label for="category" class="block text-gray-700 mb-2">Category</label>
+      <select formControlName="category" id="category" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <option value="">Select a category</option>
+        @for(category of categories; track category.id) {
+          <option value="{{category.id}}">{{category.name}}</option>
+        }
+      </select>
+            @if(category?.hasError('required')) {
+        <div class="text-red-700 text-sm mt-1">Location is required.</div>
+      }
+    </div>
+    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Search</button>
+  </form>
+</div>
