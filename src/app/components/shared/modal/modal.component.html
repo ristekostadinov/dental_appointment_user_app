@@ -1,0 +1,22 @@
+@if(visible){
+<div
+  @fade
+  class="fixed inset-0 flex items-center justify-center bg-black/50 z-50"
+  (click)="close()"
+>
+  <div
+    @scale
+    class="bg-white rounded-2xl shadow-xl w-80 p-6 text-center"
+    (click)="$event.stopPropagation()"
+  >
+    <h2 class="text-lg font-semibold text-gray-800 mb-3">{{ title }}</h2>
+    <p class="text-gray-600 mb-6">{{ message }}</p>
+    <button
+      (click)="close()"
+      class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition"
+    >
+      {{ confirmText }}
+    </button>
+  </div>
+</div>
+}
