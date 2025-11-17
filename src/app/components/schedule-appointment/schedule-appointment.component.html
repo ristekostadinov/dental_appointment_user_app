@@ -1,0 +1,100 @@
+<div class="max-w-xl mx-auto mb-20 mt-10 p-4 bg-white rounded-2xl shadow">
+  <div
+    class="bg-white rounded-lg shadow-md p-5 flex flex-col justify-between hover:shadow-lg transition"
+  >
+    <div class="flex items-start gap-4">
+      <div
+        class="h-16 w-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-semibold text-xl"
+      >
+        {{ dentalServiceProvider.name[0] || "?" }}
+      </div>
+      <div class="flex-1">
+        <h3 class="text-lg font-semibold text-gray-800">
+          {{ dentalServiceProvider.name }}
+        </h3>
+        <p class="text-sm text-gray-500 mt-1 line-clamp-2">
+          {{ dentalServiceProvider.description }}
+        </p>
+        <p class="text-sm text-gray-600 mt-2">
+          Address:
+          <span class="text-gray-700">{{ dentalServiceProvider.address }}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-4 flex items-center justify-between">
+      <div class="text-blue-700 font-semibold text-lg">
+        Dental Service: {{ dentalService.name }}
+      </div>
+    </div>
+  </div>
+  <h2 class="text-xl font-semibold text-gray-800 mb-4 text-center mt-3">
+    Book an Appointment
+  </h2>
+
+  <input
+    [min]="today"
+    type="date"
+    class="w-full mb-4 p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:outline-none"
+    (change)="onDateChange($event)"
+  />
+  
+  @if (loading) {
+  <p class="text-center text-gray-500">Loading available slots...</p>
+  } @else if (selectedDate) {
+  <h3 class="text-gray-700 mb-2 text-center">
+    Free slots for <span class="font-medium">{{ selectedDate }}</span>
+  </h3>
+
+  @if (allSlots.length > 0) {
+  <form class="mt-3">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+      @for (slot of allSlots; track slot) {
+      <label
+        class="flex items-center gap-3 p-3 border rounded-lg cursor-pointer transition hover:shadow-sm"
+        [class.border-blue-500]="slot === selectedSlot"
+        [class.bg-blue-50]="slot === selectedSlot"
+      >
+        <input
+          type="radio"
+          name="slot"
+          class="h-4 w-4 text-blue-600"
+          [value]="slot"
+          (change)="selectSlot(slot)"
+          [checked]="slot === selectedSlot"
+          [disabled]="isPastSlot(slot) || isBooked(slot)"
+        />
+        <span class="text-gray-800 ml-2">{{ slot }}</span>
+      </label>
+      }
+    </div>
+    <div class="mt-4 flex justify-center">
+      <button
+        type="button"
+        (click)="confirmAppointment()"
+        [disabled]="!selectedSlot"
+        class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50 transition"
+      >
+        Book Selected Time Slot
+      </button>
+    </div>
+  </form>
+  } @else {
+  <p class="text-center text-gray-500 mt-4">
+    No free slots available for this date.
+  </p>
+  } }
+</div>
+
+<app-modal
+  [visible]="showErrorModal"
+  title="Creating Appointment Failed"
+  message="You can't create an appointment if aren't logged in. Please log in and try again."
+  (closed)="showErrorModal = false">
+</app-modal>
+
+<app-modal
+  [visible]="showSuccessModal"
+  title="Appointment Scheduled"
+  message="Your appointment has been successfully scheduled."
+  (closed)="showSuccessModal = false">

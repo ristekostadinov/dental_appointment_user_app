@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Provider } from '../domains/Provider';
+import { Provider, ProviderWithoutPrice } from '../domains/Provider';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,5 +12,9 @@ export class ProviderService {
 
   getProviders(location: string, service: string) : Observable<Provider[]> {
     return this.httpClient.get<Provider[]>(`${this.url}/locations/${location}/services/${service}/resources`);
+  }
+
+  getProviderById(id: string) : Observable<ProviderWithoutPrice> {
+    return this.httpClient.get<Provider>(`${this.url}/resources/${id}`);
   }
 }

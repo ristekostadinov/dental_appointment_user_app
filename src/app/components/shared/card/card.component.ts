@@ -14,10 +14,10 @@ export class CardComponent {
   @Input() locationId!: string;
   @Input() categoryId!: string;
 
-  constructor(private _router: Router) {}
+  constructor(private router: Router) {}
 
   selectService() {
-    this._router.navigate([
+    this.router.navigate([
       '/categories',
       this.categoryId,
       'locations',

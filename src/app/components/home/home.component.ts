@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormsModule, ReactiveFormsModule, FormBuilder, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule, FormBuilder, Validators} from '@angular/forms';
 import { Location } from '../../domains/Location';
 import { Category} from '../../domains/Category';
 import { IHomePageForm } from '../../domains/Forms';

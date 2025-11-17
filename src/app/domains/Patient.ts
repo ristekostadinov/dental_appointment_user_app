@@ -1,5 +1,7 @@
+
 export interface Patient{
-    username: string;
+    id: number;
+    
 }
 
 export interface SignInRequest{
