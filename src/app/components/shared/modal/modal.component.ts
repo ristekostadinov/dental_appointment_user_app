@@ -34,7 +34,7 @@ export class ModalComponent {
   @Input() visible = false;
   @Input() title = '';
   @Input() message = '';
-  @Input() confirmText = 'OK';
+  @Input() confirmText = $localize`OK`;
   @Output() closed = new EventEmitter<void>();
 
   close() {

@@ -6,17 +6,15 @@
       <!-- Brand + desktop links -->
       <div class="flex items-center gap-4">
         <!-- brand color adjusted to match footer -->
-        <a routerLink="/" class="text-xl font-bold text-white"
-          >Dental Service Appointment</a
-        >
+        <a routerLink="/" class="text-xl font-bold text-white" i18n>
+          Dental Service Appointment</a>
 
         <div class="hidden md:flex items-center space-x-4">
           <a
             routerLink="/"
             routerLinkActive="text-white font-semibold"
             class="text-gray-300 hover:text-white transition"
-            >Home</a
-          >
+            i18n>Home</a>
         </div>
       </div>
 
@@ -32,11 +30,12 @@
             aria-label="Profile"
           >
             <app-user-icon></app-user-icon>
-            My Profile
+            <span i18n>My Profile</span>
           </a>
           <button
             (click)="logout()"
             class="text-gray-300 hover:text-white transition"
+            i18n
           >
             Logout
           </button>
@@ -44,13 +43,11 @@
           <a
             routerLink="/register"
             class="text-gray-300 hover:text-white transition"
-            >Register</a
-          >
+            i18n>Register</a>
           <a
             routerLink="/login"
             class="text-gray-300 hover:text-white transition"
-            >Login</a
-          >
+            i18n>Login</a>
           }
         </div>
 
@@ -87,7 +84,7 @@
           routerLink="/"
           routerLinkActive="text-white font-semibold"
           class="block px-3 py-2 text-gray-300 hover:bg-gray-800 hover:text-white rounded"
-          >Home</a
+          i18n>Home</a
         >
 
         @if(currentUser) {
@@ -96,11 +93,12 @@
           class="px-3 py-2 text-gray-300 hover:bg-gray-800 hover:text-white rounded inline-flex items-center gap-2"
         >
           <app-user-icon></app-user-icon>
-          My Profile
+          <span i18n>My Profile</span>
         </a>
         <button
           class="block px-3 py-2 text-gray-300 hover:bg-gray-800 hover:text-white rounded"
           (click)="logout()"
+          i18n
         >
           Logout
         </button>
@@ -108,13 +106,11 @@
         <a
           routerLink="/register"
           class="block px-3 py-2 text-gray-300 hover:bg-gray-800 hover:text-white rounded"
-          >Register</a
-        >
+          i18n>Register</a>
         <a
           routerLink="/login"
           class="block px-3 py-2 text-gray-300 hover:bg-gray-800 hover:text-white rounded"
-          >Login</a
-        >
+          i18n>Login</a>
         }
       </div>
     </div>

@@ -2,13 +2,13 @@
   <div class="flex items-center gap-3 w-full">
     <div>
       <h3 class="text-xl font-bold text-blue-800 mb-1">{{ dentalService.name }}</h3>
-      <span class="text-xs text-gray-400">ID: {{ dentalService.id }}</span>
+      <span class="text-xs text-gray-400"><span i18n>ID:</span> {{ dentalService.id }}</span>
     </div>
   </div>
 
   <div class="flex items-center justify-between w-full">
     <button class="mt-0 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition font-medium shadow" 
-            (click)="selectService()">
+            (click)="selectService()" i18n>
       Select Service
     </button>
   </div>
