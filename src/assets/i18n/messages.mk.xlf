@@ -176,7 +176,7 @@
       </trans-unit>
       <trans-unit id="6570395580252827586" datatype="html">
         <source>$localize`Sign In Failed`</source>
-        <target>Најавата не успеа`</target>
+        <target>Најавата е не успешна`</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/login/login.component.html</context>
           <context context-type="linenumber">62,63</context>
@@ -420,7 +420,7 @@
       </trans-unit>
       <trans-unit id="5394995309787065254" datatype="html">
         <source>Creating Account Failed</source>
-        <target>Креирањето на сметката не успеа</target>
+        <target>Креирањето на сметката е не успешно</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/register/register.component.html</context>
           <context context-type="linenumber">127</context>
@@ -484,7 +484,7 @@
       </trans-unit>
       <trans-unit id="8683163408764920329" datatype="html">
         <source>$localize`Creating Appointment Failed`</source>
-        <target>Креирањето на терминот не успеа`</target>
+        <target>Грешка при креирање на термин</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/schedule-appointment/schedule-appointment.component.html</context>
           <context context-type="linenumber">91,92</context>
