@@ -229,6 +229,20 @@
           <context context-type="linenumber">76,77</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="3981908915851407405" datatype="html">
+        <source>$localize`Appointment Canceled`</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/profile/profile.component.html</context>
+          <context context-type="linenumber">87,88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3977903634799402179" datatype="html">
+        <source>$localize`Your appointment has been successfully canceled.`</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/profile/profile.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="6768571124867793005" datatype="html">
         <source>Providers for</source>
         <context-group purpose="location">
@@ -401,8 +415,8 @@
           <context context-type="linenumber">43,44</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5101724352345329993" datatype="html">
-        <source>Free slots for</source>
+      <trans-unit id="380229817370538016" datatype="html">
+        <source>Free slots for </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/schedule-appointment/schedule-appointment.component.html</context>
           <context context-type="linenumber">46</context>
