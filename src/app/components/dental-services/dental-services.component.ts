@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DentalService } from '../../domains/DentalService';
 import { DentalServiceManager } from '../../services/dental-service.service';
 import { Router } from '@angular/router';
@@ -9,6 +9,7 @@ import { CardComponent } from '../shared/card/card.component';
     selector: 'app-dental-services',
     imports: [ErrorComponent, CardComponent],
     templateUrl: './dental-services.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './dental-services.component.css'
 })
 export class DentalServicesComponent implements OnInit {

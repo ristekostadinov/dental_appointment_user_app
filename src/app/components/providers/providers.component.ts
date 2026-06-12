@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DentalService } from '../../domains/DentalService';
 import { DentalServiceManager } from '../../services/dental-service.service';
 import { Provider } from '../../domains/Provider';
@@ -10,6 +10,7 @@ import { switchMap } from 'rxjs';
     selector: 'app-providers',
     imports: [],
     templateUrl: './providers.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './providers.component.css'
 })
 export class ProvidersComponent implements OnInit {

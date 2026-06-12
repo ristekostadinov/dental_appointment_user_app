@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { UserIconComponent } from "../user-icon/user-icon.component";
@@ -8,6 +8,7 @@ import { UserIconComponent } from "../user-icon/user-icon.component";
     selector: 'app-navigation',
     imports: [RouterLink, UserIconComponent, UserIconComponent],
     templateUrl: './navigation.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './navigation.component.css'
 })
 export class NavigationComponent implements OnInit {

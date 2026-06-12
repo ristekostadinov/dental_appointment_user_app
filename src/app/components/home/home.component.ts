@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule, FormBuilder, Validators} from '@angular/forms';
 import { Location } from '../../domains/Location';
 import { Category} from '../../domains/Category';
@@ -15,6 +15,7 @@ import { CategoryService } from '../../services/category.service';
         ReactiveFormsModule,
     ],
     templateUrl: './home.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{

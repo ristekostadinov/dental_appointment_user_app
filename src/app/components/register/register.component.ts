@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import {
@@ -17,6 +17,7 @@ import { SignUpRequest } from '../../domains/Patient';
     selector: 'app-register',
     imports: [FormsModule, ReactiveFormsModule, ModalComponent],
     templateUrl: './register.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit {

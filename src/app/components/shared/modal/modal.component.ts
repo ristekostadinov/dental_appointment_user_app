@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 
@@ -7,6 +7,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
     imports: [],
     templateUrl: './modal.component.html',
     styleUrl: './modal.component.css',
+    changeDetection: ChangeDetectionStrategy.Eager,
     animations: [
         trigger('fade', [
             transition(':enter', [

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { AppointmentService } from '../../services/appointment.service';
 import { ProviderService } from '../../services/provider.service';
@@ -13,6 +13,7 @@ import { AuthService } from '../../services/auth.service';
     selector: 'app-schedule-appointment',
     imports: [ModalComponent],
     templateUrl: './schedule-appointment.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './schedule-appointment.component.css'
 })
 export class ScheduleAppointmentComponent implements OnInit {

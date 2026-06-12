@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AppointmentService } from '../../services/appointment.service';
 import { AuthService } from '../../services/auth.service';
 import { AppointmentBookedByPatient } from '../../domains/Appointment';
@@ -9,6 +9,7 @@ import { ModalComponent } from "../shared/modal/modal.component";
     selector: 'app-profile',
     imports: [DatePipe, ModalComponent],
     templateUrl: './profile.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit{
