@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     selector: 'app-modal',
-    imports: [CommonModule,],
+    imports: [],
     templateUrl: './modal.component.html',
     styleUrl: './modal.component.css',
     animations: [
