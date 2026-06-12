@@ -16,7 +16,7 @@
           {{ dentalServiceProvider.description }}
         </p>
         <p class="text-sm text-gray-600 mt-2">
-          Address:
+          <span i18n>Address:</span>
           <span class="text-gray-700">{{ dentalServiceProvider.address }}</span>
         </p>
       </div>
@@ -24,11 +24,11 @@
 
     <div class="mt-4 flex items-center justify-between">
       <div class="text-blue-700 font-semibold text-lg">
-        Dental Service: {{ dentalService.name }}
+        <span i18n>Dental Service:</span> {{ dentalService.name }}
       </div>
     </div>
   </div>
-  <h2 class="text-xl font-semibold text-gray-800 mb-4 text-center mt-3">
+  <h2 class="text-xl font-semibold text-gray-800 mb-4 text-center mt-3" i18n>
     Book an Appointment
   </h2>
 
@@ -40,10 +40,10 @@
   />
   
   @if (loading) {
-  <p class="text-center text-gray-500">Loading available slots...</p>
+  <p class="text-center text-gray-500" i18n>Loading available slots...</p>
   } @else if (selectedDate) {
   <h3 class="text-gray-700 mb-2 text-center">
-    Free slots for <span class="font-medium">{{ selectedDate }}</span>
+    <span i18n>Free slots for </span> <span class="font-medium">{{ selectedDate }}</span>
   </h3>
 
   @if (allSlots.length > 0) {
@@ -75,12 +75,12 @@
         [disabled]="!selectedSlot"
         class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50 transition"
       >
-        Book Selected Time Slot
+        <span i18n>Book Selected Time Slot</span>
       </button>
     </div>
   </form>
   } @else {
-  <p class="text-center text-gray-500 mt-4">
+  <p class="text-center text-gray-500 mt-4" i18n>
     No free slots available for this date.
   </p>
   } }
@@ -88,13 +88,13 @@
 
 <app-modal
   [visible]="showErrorModal"
-  title="Creating Appointment Failed"
-  message="You can't create an appointment if aren't logged in. Please log in and try again."
+  title="$localize`Creating Appointment Failed`" i18n-title
+  message="$localize`You can't create an appointment if aren't logged in. Please log in and try again.`" i18n-message
   (closed)="showErrorModal = false">
 </app-modal>
 
 <app-modal
   [visible]="showSuccessModal"
-  title="Appointment Scheduled"
-  message="Your appointment has been successfully scheduled."
+  title="$localize`Appointment Scheduled`" i18n-title
+  message="$localize`Your appointment has been successfully scheduled.`" i18n-message
   (closed)="showSuccessModal = false">

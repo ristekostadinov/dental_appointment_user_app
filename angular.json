@@ -9,6 +9,12 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "mk": "src/assets/i18n/messages.mk.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -17,7 +23,8 @@
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
-              "zone.js"
+              "zone.js",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -51,6 +58,9 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+             "mk": {
+              "localize": ["mk"]
             }
           },
           "defaultConfiguration": "production"
@@ -63,6 +73,9 @@
             },
             "development": {
               "buildTarget": "dental_appointment_user_app:build:development"
+            },
+            "mk": {
+              "buildTarget": "dental_appointment_user_app:build:mk"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +88,8 @@
           "options": {
             "polyfills": [
               "zone.js",
-              "zone.js/testing"
+              "zone.js/testing",
+              "@angular/localize/init"
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [

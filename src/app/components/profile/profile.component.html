@@ -1,7 +1,7 @@
 <div class="max-w-3xl mx-auto mb-20 mt-10 p-6 bg-white rounded-2xl shadow">
   <div class="mb-6">
-    <h2 class="text-2xl font-semibold text-gray-800">Your Appointments</h2>
-    <p class="text-sm text-gray-500">All appointments booked by you</p>
+    <h2 class="text-2xl font-semibold text-gray-800" i18n>Your Appointments</h2>
+    <p class="text-sm text-gray-500" i18n>All appointments booked by you</p>
   </div>
 
   @if(!bookedAppointments || bookedAppointments.length === 0) {
@@ -22,8 +22,8 @@
           d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"
         />
       </svg>
-      <p class="font-medium">You have no appointments yet.</p>
-      <p class="text-sm mt-1">
+      <p class="font-medium" i18n>You have no appointments yet.</p>
+      <p class="text-sm mt-1" i18n>
         Search for services and book your first appointment.
       </p>
     </div>
@@ -45,21 +45,21 @@
             {{ appointment.dentalServiceName }}
           </h3>
           <p class="text-sm text-gray-500">
-            Provider:
+            <span i18n>Provider:</span>
             <span class="text-gray-700">{{
               appointment.resourceName || "N/A"
             }}</span>
           </p>
           <p class="text-sm text-gray-500">
-            Date:
+            <span i18n>Date:</span>
             <span class="text-gray-700">{{
               appointment.fromDateTime | date : "fullDate"
             }}</span>
-            from
+            <span i18n>from</span>
             <span class="text-gray-700">{{
               appointment.fromDateTime | date : "shortTime"
             }}</span>
-            to
+            <span i18n>to</span>
             <span class="text-gray-700">{{
               appointment.toDateTime | date : "shortTime"
             }}</span>
@@ -71,6 +71,7 @@
         <button
           (click)="cancelAppointment(appointment.id)"
           class="px-3 py-1 bg-red-600 text-white rounded text-sm hover:bg-red-700"
+          i18n
         >
           Cancel
         </button>
@@ -83,7 +84,7 @@
 
 <app-modal
   [visible]="showSuccessfulModal"
-  title="Appointment Canceled"
-  message="Your appointment has been successfully canceled."
+  title="$localize`Appointment Canceled`" i18n-title
+  message="$localize`Your appointment has been successfully canceled.`" i18n-message
   (closed)="showSuccessfulModal = false"
 ></app-modal>
