@@ -9,14 +9,13 @@ import { LocationService } from '../../services/location.service';
 import { CategoryService } from '../../services/category.service';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    imports: [
+        FormsModule,
+        ReactiveFormsModule,
+    ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
   homePageForm!: FormGroup<IHomePageForm>;

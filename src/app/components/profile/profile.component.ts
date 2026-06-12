@@ -6,11 +6,10 @@ import { DatePipe } from '@angular/common';
 import { ModalComponent } from "../shared/modal/modal.component";
 
 @Component({
-  selector: 'app-profile',
-  standalone: true,
-  imports: [DatePipe, ModalComponent],
-  templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css'
+    selector: 'app-profile',
+    imports: [DatePipe, ModalComponent],
+    templateUrl: './profile.component.html',
+    styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit{
   bookedAppointments!: AppointmentBookedByPatient[];

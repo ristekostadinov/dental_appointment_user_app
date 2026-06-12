@@ -7,11 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 
 @Component({
-  selector: 'app-providers',
-  standalone: true,
-  imports: [],
-  templateUrl: './providers.component.html',
-  styleUrl: './providers.component.css',
+    selector: 'app-providers',
+    imports: [],
+    templateUrl: './providers.component.html',
+    styleUrl: './providers.component.css'
 })
 export class ProvidersComponent implements OnInit {
   @Input() category!: string;

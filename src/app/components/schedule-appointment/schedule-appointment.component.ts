@@ -10,11 +10,10 @@ import { AppointmentDTO, AppointmentRequest } from '../../domains/Appointment';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-schedule-appointment',
-  standalone: true,
-  imports: [ModalComponent],
-  templateUrl: './schedule-appointment.component.html',
-  styleUrl: './schedule-appointment.component.css',
+    selector: 'app-schedule-appointment',
+    imports: [ModalComponent],
+    templateUrl: './schedule-appointment.component.html',
+    styleUrl: './schedule-appointment.component.css'
 })
 export class ScheduleAppointmentComponent implements OnInit {
   @Input() location!: string;

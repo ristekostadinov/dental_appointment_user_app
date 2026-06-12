@@ -5,11 +5,10 @@ import { UserIconComponent } from "../user-icon/user-icon.component";
 
 
 @Component({
-  selector: 'app-navigation',
-  standalone: true,
-  imports: [RouterLink, UserIconComponent, UserIconComponent],
-  templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.css',
+    selector: 'app-navigation',
+    imports: [RouterLink, UserIconComponent, UserIconComponent],
+    templateUrl: './navigation.component.html',
+    styleUrl: './navigation.component.css'
 })
 export class NavigationComponent implements OnInit {
   currentUser = null;

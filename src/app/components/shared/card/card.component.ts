@@ -3,11 +3,10 @@ import { DentalService } from '../../../domains/DentalService';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-card',
-  standalone: true,
-  imports: [],
-  templateUrl: './card.component.html',
-  styleUrl: './card.component.css',
+    selector: 'app-card',
+    imports: [],
+    templateUrl: './card.component.html',
+    styleUrl: './card.component.css'
 })
 export class CardComponent {
   @Input() dentalService!: DentalService;

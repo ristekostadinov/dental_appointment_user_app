@@ -14,11 +14,10 @@ import { IRegisterForm } from '../../domains/Forms';
 import { SignUpRequest } from '../../domains/Patient';
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, ModalComponent],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css',
+    selector: 'app-register',
+    imports: [FormsModule, ReactiveFormsModule, ModalComponent],
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
